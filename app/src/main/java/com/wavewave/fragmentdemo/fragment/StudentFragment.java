@@ -3,6 +3,7 @@ package com.wavewave.fragmentdemo.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,18 @@ public class StudentFragment extends Fragment {
         initView(inflate);
         return inflate;
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("aaaaa", "student onResume");
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Log.d("aaaaa", "student isVisibleToUser:" + isVisibleToUser);
     }
 
     private void initView(View view) {
